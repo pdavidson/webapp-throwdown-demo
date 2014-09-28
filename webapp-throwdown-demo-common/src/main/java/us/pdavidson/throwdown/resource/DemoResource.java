@@ -12,10 +12,10 @@ import javax.ws.rs.core.Response;
 import java.util.Set;
 import java.util.TreeSet;
 
-@Path("/")
+@Path("/{name}")
 @Singleton
 @Produces("application/json")
-public class DemoResource {
+public class DemoResource   {
 
         private static final Integer NumberOfNodes = 1000000;
         private Set<DemoBean> dataSource;
@@ -29,7 +29,6 @@ public class DemoResource {
         }
 
         @GET
-        @Path("{name}")
         public Response hello(@PathParam("name")String name){
             DemoBean demoBean = Iterables.tryFind(dataSource, demo -> name.equals(demo.getName())).orNull();
             if (demoBean == null) {

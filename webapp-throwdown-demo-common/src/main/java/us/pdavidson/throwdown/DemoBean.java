@@ -1,6 +1,6 @@
 package us.pdavidson.throwdown;
 
-public class DemoBean {
+public class DemoBean implements Comparable{
     public String name;
 
 
@@ -31,5 +31,11 @@ public class DemoBean {
     @Override
     public int hashCode() {
         return name.hashCode();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        DemoBean other = (DemoBean)o;
+        return name.compareTo(other.name);
     }
 }
