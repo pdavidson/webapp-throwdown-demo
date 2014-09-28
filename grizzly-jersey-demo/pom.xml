@@ -12,6 +12,19 @@
 
     <artifactId>grizzly-jersey-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>us.pdavidson</groupId>
+            <artifactId>webapp-throwdown-demo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-grizzly2-http</artifactId>
+            <version>2.12</version>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
@@ -23,11 +36,10 @@
                     <execution><goals><goal>java</goal></goals></execution>
                 </executions>
                 <configuration>
-                    <mainClass>org.example.HelloWorld</mainClass>
+                    <mainClass>us.pdavidson.grizzly.GrizzlyDemo</mainClass>
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 
 </project>
